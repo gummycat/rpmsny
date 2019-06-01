@@ -31,4 +31,13 @@ class Event {
       Event('100', Host('Fredrick Lewis', 'Perl'), '', 'Richmond, VA', 30, new DateTime(2019, 6, 15, 16, 45, 0, 0, 0), new DateTime(2019, 6, 15, 17, 45, 0, 0, 0)),
     ];
   }
+
+  static List<Event> yourEvents() {
+    return[
+      Event('101', Host('Sandy Evans','Java'), '', 'Washington DC', 20, new DateTime(2019, 6, 5, 16, 45, 00, 0, 0), new DateTime(2019, 6, 5, 17, 15, 00, 0, 0)),
+      Event('102', Host('Clark Stevens','Flutter'), '', 'New York, NY', 30, new DateTime(2019, 6, 2, 16, 45, 00, 0, 0), new DateTime(2019, 6, 2, 17, 00, 00, 0, 0)),
+      Event('103', Host('John Clarkson','Flutter'), '', 'Washington, DC', 50, new DateTime(2019, 6, 20, 16, 45, 00, 0, 0), new DateTime(2019, 6, 20, 17, 30, 0, 0, 0)),
+      Event('104', Host('Jessica Rodgers', 'Flutter'),'', 'New York, NY', 60, new DateTime(2019, 6, 12, 16, 00, 0, 0, 0), new DateTime(2019, 6, 12, 16, 45, 0, 0, 0)),
+    ];
+  }
 }
