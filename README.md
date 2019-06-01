@@ -1,4 +1,4 @@
-# rpms_ny
+# rpmsny
 
 A new Flutter project.
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1031134513208",
+    "firebase_url": "https://rpmsny-20190601.firebaseio.com",
+    "project_id": "rpmsny-20190601",
+    "storage_bucket": "rpmsny-20190601.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031134513208:android:045ad4a94913872b",
+        "android_client_info": {
+          "package_name": "com.mejdev.rpmsny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031134513208-d19u0hu9r3cj452vrfkfub3hj41o8irj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mejdev.rpmsny",
+            "certificate_hash": "e96d118fabb6730e2ec3098e3f35abdc0d823220"
+          }
+        },
+        {
+          "client_id": "1031134513208-7ifmdh0o2tv7eodlps6cf43h5c1ot36p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0zKresG2sVDfesJjJrs4bJfQ6LtfNPbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031134513208-7ifmdh0o2tv7eodlps6cf43h5c1ot36p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031134513208-p7ue0pq7ch0l1b8kae6mjvf36f5u3v50.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mejdev.rpmsny"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
