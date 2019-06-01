@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rpmsny/src/blocs/auth_bloc.dart';
 import 'package:rpmsny/src/blocs/schedule_bloc.dart';
 import 'package:rpmsny/src/models/event.dart';
 import 'package:rpmsny/src/screens/event_widget.dart';
-import '../blocs/timer_bloc.dart';
 import 'search_screen.dart';
-import 'package:flare_flutter/flare_actor.dart';
 
 class HomeScreen extends StatefulWidget {
   final String _uid;
@@ -28,8 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(context) {
     return MultiProvider(
       providers: [
-        Provider<TimerBloc>(builder: (_) => TimerBloc(),),
-        Provider<ScheduleBloc>(builder: (_) => ScheduleBloc(),),
       ],
       child: Scaffold(
           appBar: AppBar(

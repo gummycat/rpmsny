@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../blocs/timer_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../models/event.dart';
@@ -41,7 +40,6 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body: MultiProvider(
         providers: [
-          Provider<TimerBloc>(builder: (_) => TimerBloc(),),
         ],
         child: Container(
           padding: EdgeInsets.all(20.0),
