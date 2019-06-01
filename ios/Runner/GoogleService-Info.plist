@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1031134513208-p7ue0pq7ch0l1b8kae6mjvf36f5u3v50.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1031134513208-p7ue0pq7ch0l1b8kae6mjvf36f5u3v50</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDEZWd7k35xoQ41pgC8x2DYQNWMO0Uacak</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1031134513208</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mejdev.rpmsny</string>
+	<key>PROJECT_ID</key>
+	<string>rpmsny-20190601</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rpmsny-20190601.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1031134513208:ios:045ad4a94913872b</string>
+	<key>DATABASE_URL</key>
+	<string>https://rpmsny-20190601.firebaseio.com</string>
+</dict>
+</plist>
