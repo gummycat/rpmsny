@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../blocs/timer_bloc.dart';
 import 'search_screen.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 class HomeScreen extends StatefulWidget {
   final String _uid;
@@ -28,12 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
           body: SafeArea(
             top: true,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Center(
-                  child: Text('Home Screen'),
-                ),
-                SizedBox(height: 10,),
               ],
             )
           ),
