@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../blocs/timer_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 
 class SearchScreen extends StatefulWidget {
   
@@ -12,6 +13,20 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
 
   _SearchScreenState();
+  DateTime selectedDate = DateTime.now();
+  final fmt = DateFormat('EEEE, MMMM d, y');
+
+  Future<Null> _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2015, 8),
+      lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+      });
+  }
 
   Widget build(context) {
     return Scaffold (
@@ -22,14 +37,20 @@ class _SearchScreenState extends State<SearchScreen> {
         providers: [
           Provider<TimerBloc>(builder: (_) => TimerBloc(),),
         ],
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: Text('Search Screen'),
-            ),
-            SizedBox(height: 10,),
-          ],
+        child: Container(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              RaisedButton(
+                child: Text(fmt.format(selectedDate)),
+                onPressed: () {
+                  _selectDate(context);
+                }
+              ),
+              SizedBox(height: 10,),
+            ],
+          ),
         )
       ),
     );
