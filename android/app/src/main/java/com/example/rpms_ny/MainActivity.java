@@ -1,4 +1,4 @@
-package com.example.rpms_ny;
+package com.mejdev.rpmsny;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
