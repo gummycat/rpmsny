@@ -1,3 +1,3 @@
-class StringConstant{
-  static const String signInGoogle = "Continue with Google";
+class StringConstants{
+  static const String signInGoogle = "Authenticating with Google";
 }

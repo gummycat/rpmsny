@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../blocs/auth_bloc.dart';
+import '../utils/strings.dart';
 import 'home_screen.dart';
-import 'login_screen.dart';
 
 class RootScreen extends StatelessWidget {
   @override
@@ -12,7 +12,12 @@ class RootScreen extends StatelessWidget {
       stream: authBloc.currentUser,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.active) {
-          return snapshot.hasData ? HomeScreen(snapshot.data) : LoginScreen();
+          if (snapshot.hasData) {
+            return HomeScreen(snapshot.data);
+          } else {
+            authBloc.authenticateUserWithGoogle();
+            return Text(StringConstants.signInGoogle);
+          }
         } else {
           return Text('Waiting...');
         }
