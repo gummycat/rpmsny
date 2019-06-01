@@ -5,15 +5,19 @@ import '../utils/strings.dart';
 import 'home_screen.dart';
 
 class RootScreen extends StatelessWidget {
+  AuthBloc authBloc;
+
   @override
   Widget build(BuildContext context) {
-    final AuthBloc authBloc = Provider.of<AuthBloc>(context);
+    authBloc = Provider.of<AuthBloc>(context);
+
     return Scaffold(
       body: StreamBuilder<String>(
         stream: authBloc.currentUser,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.active) {
             if (snapshot.hasData) {
+              _showToast(context);
               return HomeScreen(snapshot.data);
             } else {
               authBloc.authenticateUserWithGoogle();
@@ -25,5 +29,12 @@ class RootScreen extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void _showToast(context) async {
+    var displayName = await authBloc.getCurrentUserId();
+    Scaffold.of(context).showSnackBar(new SnackBar(
+      content: new Text("Hello, $displayName!!"),
+    ));
   }
 }

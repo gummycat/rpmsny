@@ -27,7 +27,7 @@ class FirebaseAuthService implements BaseAuthService {
   Future<String> getCurrentUserId() async {
     FirebaseUser user = await _firebaseAuth.currentUser();
 
-    return user?.uid;
+    return user?.displayName;
   }
 
   Future<void> signOut() async {
