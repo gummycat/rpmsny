@@ -22,6 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   _HomeScreenState(this._uid);
 
   Widget build(context) {
+    events.sort((e1,e2) => e1.startTime.compareTo(e2.startTime));
+    
     return MultiProvider(
       providers: [
       ],
