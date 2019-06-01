@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../models/event.dart';
 import '../models/host.dart';
+import 'event_widget.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key key}) : super(key: key);
@@ -15,7 +16,7 @@ class _SearchScreenState extends State<SearchScreen> {
   _SearchScreenState();
   DateTime selectedDate = DateTime.now();
   final fmt = DateFormat('EEEE, MMMM d, y');
-  final fmtTime = DateFormat('hh:mm');
+  static final fmtTime = DateFormat('hh:mm');
   var events = List<Event>();
 
   Future<Null> _selectDate(BuildContext context) async {
@@ -88,16 +89,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: ListView.builder(
                   shrinkWrap: true,
                   itemCount: events.length,
-                  itemBuilder: (contezt, index) {
-                    return ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Theme.of(context).accentColor,
-                        child: Text(events[index].range.toString()),
-                      ),
-                      title: Text(events[index].host.displayName),
-                      subtitle: Text(_getEventSubtitle(events[index])),
-                    );
-                  },
+                  itemBuilder: (contezt, index) => EventWidget(events[index]),
                 ),
               )
             ],
@@ -107,7 +99,7 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  String _getEventSubtitle(Event event) {
+  static String getEventSubtitle(Event event) {
     String start = fmtTime.format(event.startTime);
     String end = fmtTime.format(event.endTime);
 

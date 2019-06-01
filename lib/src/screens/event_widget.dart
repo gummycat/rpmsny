@@ -6,7 +6,7 @@ import 'package:rpmsny/src/models/event.dart';
 class EventWidget extends StatelessWidget {
   final Event _event;
 
-   final fmtTime = DateFormat('hh:mm');
+   final fmtTime = DateFormat('M/dd @ hh:mm');
 
   EventWidget(this._event);
 
@@ -14,6 +14,7 @@ class EventWidget extends StatelessWidget {
 String _getEventSubtitle(Event event) {
     String start = fmtTime.format(event.startTime);
     String end = fmtTime.format(event.endTime);
+    end = end.substring(end.indexOf("@ "));
 
     return '$start - $end';
   }
@@ -25,7 +26,7 @@ String _getEventSubtitle(Event event) {
                                 backgroundColor: Theme.of(context).accentColor,
 child: Text(_event.range.toString()),),
       title: Text(_event.host.displayName),
-      subtitle: Text("${_event.host.skills} @ ${_getEventSubtitle(_event)}"),
+      subtitle: Text("${_event.host.skills} on  ${_getEventSubtitle(_event)}"),
     );
   }
 
