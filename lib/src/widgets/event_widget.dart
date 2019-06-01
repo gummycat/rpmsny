@@ -14,13 +14,14 @@ class EventWidget extends StatelessWidget {
 String _getEventSubtitle(Event event) {
     String start = fmtTime.format(event.startTime);
     String end = fmtTime.format(event.endTime);
-    end = end.substring(end.indexOf("@ "));
+    end = end.substring(end.indexOf("@ ")+2);
 
     return '$start - $end';
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Dismissible(
       key: Key(_event.eventKey),
       child: ListTile(
