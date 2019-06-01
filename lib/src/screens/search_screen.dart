@@ -117,5 +117,7 @@ class _SearchScreenState extends State<SearchScreen> {
       Event('109', Host('John Fredrickson', 'Cobol'), '', 'Richmond, VA', 30, new DateTime(2019, 6, 15, 16, 45, 0, 0, 0), new DateTime(2019, 6, 15, 17, 45, 0, 0, 0)),
       Event('100', Host('Fredrick Lewis', 'Perl'), '', 'Richmond, VA', 30, new DateTime(2019, 6, 15, 16, 45, 0, 0, 0), new DateTime(2019, 6, 15, 17, 45, 0, 0, 0)),    
     ];
+
+    events.sort((e1, e2) => (e1.startTime.compareTo( e2.startTime)));
   }
 }
