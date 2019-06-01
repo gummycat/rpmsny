@@ -14,6 +14,8 @@ class AuthBloc {
     return _authService.authenticateUserWithGoogle();
   }
 
+  Future<String> getCurrentUserId() async => await _authService.getCurrentUserId();
+
   void dispose() async {
     await currentUser.drain();
   }
