@@ -21,12 +21,15 @@ String _getEventSubtitle(Event event) {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-                                backgroundColor: Theme.of(context).accentColor,
-child: Text(_event.range.toString()),),
-      title: Text(_event.host.displayName),
-      subtitle: Text("${_event.host.skills} on  ${_getEventSubtitle(_event)}"),
+    return Dismissible(
+      key: Key(_event.eventKey),
+      child: ListTile(
+        leading: CircleAvatar(
+        backgroundColor: Theme.of(context).accentColor,
+        child: Text(_event.range.toString()),),
+        title: Text(_event.host.displayName),
+        subtitle: Text("${_event.host.skills} on  ${_getEventSubtitle(_event)}"),
+      ),
     );
   }
 

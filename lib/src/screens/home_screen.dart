@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rpmsny/src/blocs/schedule_bloc.dart';
 import 'package:rpmsny/src/models/event.dart';
-import 'package:rpmsny/src/screens/event_widget.dart';
+import 'package:rpmsny/src/widgets/event_widget.dart';
 import 'search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -56,15 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ),
-      
-      
-      
-      
-      
-      
-      
-      
-      
     );
   }
 }
