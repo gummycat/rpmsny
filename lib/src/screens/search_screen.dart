@@ -14,19 +14,24 @@ class _SearchScreenState extends State<SearchScreen> {
   _SearchScreenState();
 
   Widget build(context) {
-    return MultiProvider(
-      providers: [
-        Provider<TimerBloc>(builder: (_) => TimerBloc(),),
-      ],
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Center(
-            child: Text('Search Screen'),
-          ),
-          SizedBox(height: 10,),
+    return Scaffold (
+      appBar: AppBar(
+        title: Text('Search'),
+      ),
+      body: MultiProvider(
+        providers: [
+          Provider<TimerBloc>(builder: (_) => TimerBloc(),),
         ],
-      )
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: Text('Search Screen'),
+            ),
+            SizedBox(height: 10,),
+          ],
+        )
+      ),
     );
   }
 }
