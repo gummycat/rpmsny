@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../blocs/timer_bloc.dart';
 import 'package:provider/provider.dart';
+import '../blocs/timer_bloc.dart';
+import 'search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final String _uid;
@@ -20,15 +21,40 @@ class _HomeScreenState extends State<HomeScreen> {
       providers: [
         Provider<TimerBloc>(builder: (_) => TimerBloc(),),
       ],
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Center(
-            child: Text('Home Screen'),
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text('Minder'),
           ),
-          SizedBox(height: 10,),
-        ],
-      )
+          body: SafeArea(
+            top: true,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Center(
+                  child: Text('Home Screen'),
+                ),
+                SizedBox(height: 10,),
+              ],
+            )
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => SearchScreen()
+              ));
+            },
+          ),
+        ),
+      
+      
+      
+      
+      
+      
+      
+      
+      
     );
   }
 }

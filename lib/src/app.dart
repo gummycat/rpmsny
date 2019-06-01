@@ -22,21 +22,7 @@ class App extends StatelessWidget {
           primaryColor: Colors.purple[700],
           accentColor: Colors.orange[800],
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Minder'),
-          ),
-          body: SafeArea(
-            top: true,
-            child: RootScreen()
-          ),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.search),
-            onPressed: () {
-
-            },
-          ),
-        ),
+        home: RootScreen()
       ),
     );
   }
