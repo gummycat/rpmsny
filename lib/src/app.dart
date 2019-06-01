@@ -16,16 +16,25 @@ class App extends StatelessWidget {
     return Provider<AuthBloc>(
       builder: (_) => AuthBloc(FirebaseAuthService()),
       child: MaterialApp(
-        title: 'Who Picked That?!',
+        title: 'Minder',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.purple[700],
           accentColor: Colors.orange[800],
         ),
         home: Scaffold(
+          appBar: AppBar(
+            title: Text('Minder'),
+          ),
           body: SafeArea(
             top: true,
             child: RootScreen()
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.search),
+            onPressed: () {
+
+            },
           ),
         ),
       ),

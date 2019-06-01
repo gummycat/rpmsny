@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../blocs/timer_bloc.dart';
 import 'package:provider/provider.dart';
-// import '../services/firestore_data_service.dart';
 
 class HomeScreen extends StatefulWidget {
   final String _uid;
@@ -29,31 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(height: 10,),
         ],
-          // ),
-          // floatingActionButton: 
-          //   UnicornDialer(
-          //   hasBackground: false,
-          //   parentButtonBackground: Colors.orange[800],
-          //   parentButton: Icon(Icons.add),
-          //   childButtons: <UnicornButton>[
-          //     UnicornButton(
-          //       currentButton: FloatingActionButton(
-          //         backgroundColor: Colors.purple[800],
-          //         mini: true,
-          //         child: Icon(Icons.add),
-          //         onPressed: () {},
-          //       ),
-          //     ),
-          //     UnicornButton(
-          //       currentButton: FloatingActionButton(
-          //         backgroundColor: Colors.purple[800],
-          //         mini: true,
-          //         child: Icon(Icons.search),
-          //         onPressed: () {},
-          //       ),
-          //     ),
-          //   ],
-          // ),
       )
     );
   }
