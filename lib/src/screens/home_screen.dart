@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rpmsny/src/blocs/auth_bloc.dart';
+import 'package:rpmsny/src/blocs/schedule_bloc.dart';
+import 'package:rpmsny/src/models/event.dart';
+import 'package:rpmsny/src/screens/event_widget.dart';
 import '../blocs/timer_bloc.dart';
 import 'search_screen.dart';
 import 'package:flare_flutter/flare_actor.dart';
@@ -14,6 +18,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final String _uid;
+  List<Event> events = Event.listEvents().where((item) {
+
+    return (int.parse(item.eventKey) %3 == 0);
+  }).toList();
 
   _HomeScreenState(this._uid);
 
@@ -21,18 +29,28 @@ class _HomeScreenState extends State<HomeScreen> {
     return MultiProvider(
       providers: [
         Provider<TimerBloc>(builder: (_) => TimerBloc(),),
+        Provider<ScheduleBloc>(builder: (_) => ScheduleBloc(),),
       ],
       child: Scaffold(
           appBar: AppBar(
-            title: Text('Minder'),
+            title: Text('Minder '),
           ),
           body: SafeArea(
             top: true,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Flexible(
+                  child: ListView.builder(
+                    shrinkWrap: false,
+                    itemCount: events.length,
+                    itemBuilder: (contezt, index) => 
+                      EventWidget(events[index])
+                    ,
+                  
+                ),)
               ],
-            )
+            ),
           ),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.search),
